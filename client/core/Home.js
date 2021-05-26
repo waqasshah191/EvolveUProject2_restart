@@ -65,7 +65,7 @@ export default function Home({history}){
                 <CardMedia className={classes.media} image={environmentImg} title="Environment Image "/>
                 <CardContent>
                   <Typography type="body1" component="p">
-                    Welcome to the Eco Products Registry home page. Our goal is to provide a platform where environmentally conscious consumers can come together and discuss about their views on different consumer products. 
+                    Welcome to the Eco Products Journal home page. Our goal is to provide a platform where environmentally conscious consumers can come together and discuss about their views on different consumer products. 
                   </Typography>
                 </CardContent>
               </Card>

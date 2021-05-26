@@ -103,7 +103,7 @@ export default function NewPost (props){
           />
       <CardContent className={classes.cardContent}>
         <TextField
-            placeholder="Share your thoughts ..."
+            placeholder="Please tell us how long it lasted and share your thoughts ..."
             multiline
             rows="3"
             value={values.text}
