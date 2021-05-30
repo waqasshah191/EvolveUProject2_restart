@@ -22,6 +22,11 @@ router.route('/api/posts/like')
 router.route('/api/posts/unlike')
   .put(authCtrl.requireSignin, postCtrl.unlike)
 
+router.route('/api/posts/dislike')
+  .put(authCtrl.requireSignin, postCtrl.dislike)
+router.route('/api/posts/undislike')
+  .put(authCtrl.requireSignin, postCtrl.undislike)
+
 router.route('/api/posts/comment')
   .put(authCtrl.requireSignin, postCtrl.comment)
 router.route('/api/posts/uncomment')
