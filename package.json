@@ -19,6 +19,7 @@
   "main": "./dist/server.generated.js",
   "scripts": {
     "development": "nodemon",
+    "install": "npm install",
     "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
     "start": "NODE_ENV=production node ./dist/server.generated.js"
   },
