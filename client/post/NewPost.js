@@ -14,6 +14,10 @@ import {makeStyles} from '@material-ui/core/styles'
 import {create} from './api-post.js'
 import IconButton from '@material-ui/core/IconButton'
 import PhotoCamera from '@material-ui/icons/PhotoCamera'
+import Select from '@material-ui/core/Select'
+import MenuItem from '@material-ui/core/MenuItem'
+import FormControl from '@material-ui/core/MenuItem'
+import InputLabel from '@material-ui/core/InputLabel'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -62,7 +66,8 @@ export default function NewPost (props){
     text: '',
     photo: '',
     error: '',
-    user: {}
+    user: {},
+    category: ''
   })
   const jwt = auth.isAuthenticated()
   useEffect(() => {
@@ -72,18 +77,14 @@ export default function NewPost (props){
     let postData = new FormData()
     postData.append('text', values.text)
     postData.append('photo', values.photo)
-    create({
-      userId: jwt.user._id
-    }, {
-      t: jwt.token
-    }, postData).then((data) => {
-      if (data.error) {
-        setValues({...values, error: data.error})
-      } else {
-        setValues({...values, text:'', photo: ''})
-        props.addUpdate(data)
-      }
-    })
+    postData.append('category',values.category)
+    create({userId: jwt.user._id}, 
+          {t: jwt.token}, postData)
+          .then((data) => {
+                            if (data.error) {setValues({...values, error: data.error})} 
+                            else {setValues({...values, text:'', photo: '',category: ''})
+                                  props.addUpdate(data)}
+                            })
   }
   const handleChange = name => event => {
     const value = name === 'photo'
@@ -91,6 +92,7 @@ export default function NewPost (props){
       : event.target.value
     setValues({...values, [name]: value })
   }
+
   const photoURL = values.user._id ?'/api/users/photo/'+ values.user._id : '/api/users/defaultphoto'
     return (<div className={classes.root}>
       <Card className={classes.card}>
@@ -103,7 +105,7 @@ export default function NewPost (props){
           />
       <CardContent className={classes.cardContent}>
         <TextField
-            placeholder="Please tell us how long it lasted and share your thoughts ..."
+            placeholder="Share your thoughts on product longevity and eco-friendliness..."
             multiline
             rows="3"
             value={values.text}
@@ -116,6 +118,20 @@ export default function NewPost (props){
           <IconButton color="secondary" className={classes.photoButton} component="span">
             <PhotoCamera />
           </IconButton>
+          
+          <FormControl>
+            <InputLabel>Categories</InputLabel>
+            <Select 
+              value= {values.category} 
+              onChange={handleChange('category')}>
+              <MenuItem value={'Electronics'}>Electronics</MenuItem>
+              <MenuItem value={'Textile'}>Textile</MenuItem>
+              <MenuItem value={'Furniture'}>Furniture</MenuItem>
+              <MenuItem value={'Sporting Goods'}>Sporting Goods</MenuItem>
+              <MenuItem value={'Decorations'}>Decorations</MenuItem>
+            </Select>
+          </FormControl>
+
         </label> <span className={classes.filename}>{values.photo ? values.photo.name : ''}</span>
         { values.error && (<Typography component="p" color="error">
             <Icon color="error" className={classes.error}>error</Icon>
