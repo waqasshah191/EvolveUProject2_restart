@@ -18,7 +18,8 @@ const PostSchema = new mongoose.Schema({
   created: {
     type: Date,
     default: Date.now
-  }
+  },
+  category:{type: String}
 })
 
 export default mongoose.model('Post', PostSchema)
