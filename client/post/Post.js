@@ -24,7 +24,7 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 600,
     margin: 'auto',
     marginBottom: theme.spacing(3),
-    backgroundColor: 'rgba(0, 0, 0, 0.06)'
+    backgroundColor: 'white'
   },
   cardContent: {
     backgroundColor: 'white',
@@ -39,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   },
   photo: {
     textAlign: 'center',
-    backgroundColor: '#f2f5f4',
+    backgroundColor: 'white',
     padding: theme.spacing(1)
   },
   media: {
@@ -186,11 +186,12 @@ export default function Post(props) {
           <ThumbDownAlt />
         </IconButton>
         <span>{values.dislikes}</span>
-
-
         <IconButton className={classes.button} aria-label="Comment" color="secondary">
           <CommentIcon />
         </IconButton> <span>{values.comments.length}</span>
+        <Typography component="p" className={classes.text}>
+             Category: {props.post.category}
+        </Typography>
       </CardActions>
       <Divider />
       <Comments postId={props.post._id} comments={values.comments} updateComments={updateComments} />
