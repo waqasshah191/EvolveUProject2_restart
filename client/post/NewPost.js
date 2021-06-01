@@ -21,14 +21,14 @@ import InputLabel from '@material-ui/core/InputLabel'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    backgroundColor: '#efefef',
-    padding: `${theme.spacing(3)}px 0px 1px`
+    backgroundColor: 'white',
+    padding: `${theme.spacing(3)}px 0px 0px`
   },
   card: {
     maxWidth: 600,
     margin: 'auto',
     marginBottom: theme.spacing(3),
-    backgroundColor: 'rgba(65, 150, 136, 0.09)',
+    backgroundColor: 'white',
     boxShadow: 'none'
   },
   cardContent: {
