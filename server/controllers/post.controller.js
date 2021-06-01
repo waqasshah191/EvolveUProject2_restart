@@ -138,7 +138,10 @@ const undislike = async (req, res) => {
   }
 }
 
-
+const allposts = async (req,res) =>{
+  let posts = await Post.find()
+  return res.json(posts)
+}
 const comment = async (req, res) => {
   let comment = req.body.comment
   comment.postedBy = req.body.userId
@@ -192,5 +195,6 @@ export default {
   undislike,
   comment,
   uncomment,
-  isPoster
+  isPoster,
+  allposts
 }
