@@ -18,14 +18,16 @@ import {Redirect, Link} from 'react-router-dom'
 import FollowProfileButton from './../user/FollowProfileButton'
 import ProfileTabs from './../user/ProfileTabs'
 import {listByUser} from './../post/api-post.js'
+import ProfilebackgroundImg from './../assets/images/world-back.jpg'
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
     maxWidth: 600,
     margin: 'auto',
     padding: theme.spacing(3),
-    marginTop: theme.spacing(5)
+    marginTop: theme.spacing(5),
   }),
+
   title: {
     margin: `${theme.spacing(2)}px ${theme.spacing(1)}px 0`,
     color: theme.palette.protectedTitle,
@@ -145,6 +147,7 @@ export default function Profile({ match }) {
         </List>
         <ProfileTabs user={values.user} posts={posts} removePostUpdate={removePost}/>
       </Paper>
+    
     )
 }
 
