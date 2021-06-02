@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from "react"
 import { Route, Switch } from 'react-router-dom'
 import Home from './core/Home'
 import Users from './user/Users'
@@ -9,28 +9,25 @@ import Profile from './user/Profile'
 import PrivateRoute from './auth/PrivateRoute'
 import Menu from './core/Menu'
 import { makeStyles } from '@material-ui/core'
-import PatternImage from './assets/images/Pattern.jpg'
+import Footer from "./core/Footer"
+
 
 
 const MainRouter = () => {
-  const useStyle = makeStyles(() => ({
-    containerClass: {
-      backgroundImage: `url(${PatternImage})`
-    }
-  }))
-
-  const classes = useStyle()
-  return (<div className={classes.containerClass} >
+  return (<div>
     <Menu />
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/users" component={Users} />
+      <Route path="/table" component={BasicTable} />
       <Route path="/signup" component={Signup} />
       <Route path="/signin" component={Signin} />
       <PrivateRoute path="/user/edit/:userId" component={EditProfile} />
       <Route path="/user/:userId" component={Profile} />
     </Switch>
-  </div >)
+    <Footer />
+
+  </div>)
 }
 
 export default MainRouter

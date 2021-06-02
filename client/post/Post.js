@@ -101,7 +101,7 @@ export default function Post(props) {
       if (data.error) {
         console.log(data.error)
       } else {
-        setValues({ ...values, dislike: !values.like, dislikes: data.dislikes.length })
+        setValues({ ...values, dislike: !values.dislike, dislikes: data.dislikes.length })
       }
     })
   }
