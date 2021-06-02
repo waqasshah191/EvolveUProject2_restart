@@ -14,8 +14,17 @@ import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import {create} from './api-user.js'
 import {Link} from 'react-router-dom'
+import SignbackgroundImg from './../assets/images/sign-back2.jpg'
 
 const useStyles = makeStyles(theme => ({
+  background:{
+    backgroundImage:`url(${SignbackgroundImg})`,
+    backgroundAttachment: 'fixed',
+    backgroundSize: 'cover',
+    margin: 0,
+    paddingTop: 5,
+    paddingBottom: 390
+  },
   card: {
     maxWidth: 600,
     margin: 'auto',
@@ -70,7 +79,7 @@ export default function Signup (){
     })
   }
 
-    return (<div>
+    return (<div className={classes.background}>
       <Card className={classes.card}>
         <CardContent>
           <Typography variant="h6" className={classes.title}>
