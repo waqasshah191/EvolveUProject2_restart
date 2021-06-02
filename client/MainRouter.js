@@ -9,20 +9,10 @@ import EditProfile from './user/EditProfile'
 import Profile from './user/Profile'
 import PrivateRoute from './auth/PrivateRoute'
 import Menu from './core/Menu'
-import { makeStyles } from '@material-ui/core'
-import PatternImage from './assets/images/Pattern.jpg'
-
 
 const MainRouter = () => {
-  const useStyle = makeStyles(() => ({
-    containerClass: {
-      backgroundImage: `url(${PatternImage})`
-    }
-  }))
-
-  const classes = useStyle()
-  return (<div className={classes.containerClass} >
-    <Menu />
+  return (<div>
+    <Menu/>
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/users" component={Users} />
@@ -32,7 +22,9 @@ const MainRouter = () => {
       <PrivateRoute path="/user/edit/:userId" component={EditProfile} />
       <Route path="/user/:userId" component={Profile} />
     </Switch>
-  </div >)
+  </div>)
 }
 
 export default MainRouter
+
+
