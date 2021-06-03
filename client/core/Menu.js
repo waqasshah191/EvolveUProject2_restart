@@ -37,7 +37,7 @@ const Menu = withRouter(({ history }) => (
             </Button>
           </Link>
           <Link to="/Table">
-            <Button style={isActive(history, "/Table")}>Category Table
+            <Button style={isActive(history, "/Table")}>All Posts
             </Button>
           </Link>
         </span>)
@@ -48,8 +48,17 @@ const Menu = withRouter(({ history }) => (
             <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
           </Link>
           <Button color="inherit" onClick={() => {
+
             auth.clearJWT(() => history.push('/'))
           }}>Sign out</Button>
+              auth.clearJWT(() => history.push('/'))
+            }}>Sign out</Button>
+
+          <Link to="/Table">
+            <Button style={isActive(history, "/Table")}>All Posts
+            </Button>
+          </Link>
+
         </span>)
       }
     </Toolbar>
