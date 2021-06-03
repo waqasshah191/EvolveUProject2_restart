@@ -19,27 +19,31 @@ const Footer = () => {
             <Title>ECO PRODUCT JOURNAL</Title>
             <Container>
                 <About>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    This is a social media platform created by four co-founders Garima, Osric, Ray and Waqas to create consumer awareness relating to environmental waste. We aim to solve this environmental problem through discussion on different products by the members of the website.
+
+                    <br />
+                    <br />
+                    <a href='https://docs.google.com/presentation/d/1EzV4kpaOdSUihkvRiFsK3DLDxTxrifBUBYdlBFyuPCA/edit#slide=id.gde773fab20_0_119'> Link to our presentation</a>
                 </About>
 
                 <SocialList>
                     <SocialItem>
-                        <FooterLink href='#'>
+                        <FooterLink href='https://twitter.com'>
                             <Twitter />
                         </FooterLink>
                     </SocialItem>
                     <SocialItem>
-                        <FooterLink href='#'>
+                        <FooterLink href='https://www.facebook.com'>
                             <Facebook />
                         </FooterLink>
                     </SocialItem>
                     <SocialItem>
-                        <FooterLink href='#'>
+                        <FooterLink href='https://www.instagram.com'>
                             <Instagram />
                         </FooterLink>
                     </SocialItem>
                     <SocialItem>
-                        <FooterLink href='#'>
+                        <FooterLink href='https://www.linkedin.com/'>
                             <LinkedIn />
                         </FooterLink>
                     </SocialItem>

@@ -51,8 +51,6 @@ const Menu = withRouter(({ history }) => (
 
             auth.clearJWT(() => history.push('/'))
           }}>Sign out</Button>
-              auth.clearJWT(() => history.push('/'))
-            }}>Sign out</Button>
 
           <Link to="/Table">
             <Button style={isActive(history, "/Table")}>All Posts
