@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from "react"
 import { Route, Switch } from 'react-router-dom'
 import Home from './core/Home'
 import BasicTable from './core/Table'
@@ -9,10 +9,11 @@ import EditProfile from './user/EditProfile'
 import Profile from './user/Profile'
 import PrivateRoute from './auth/PrivateRoute'
 import Menu from './core/Menu'
+import Footer from "./core/Footer"
 
 const MainRouter = () => {
   return (<div>
-    <Menu/>
+    <Menu />
     <Switch>
       <Route exact path="/" component={Home} />
       <Route path="/users" component={Users} />
@@ -22,6 +23,8 @@ const MainRouter = () => {
       <PrivateRoute path="/user/edit/:userId" component={EditProfile} />
       <Route path="/user/:userId" component={Profile} />
     </Switch>
+
+    <Footer />
   </div>)
 }
 
