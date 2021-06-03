@@ -5,6 +5,9 @@ import postCtrl from '../controllers/post.controller'
 
 const router = express.Router()
 
+router.route('/api/posts/all')
+  .get(postCtrl.allposts)
+
 router.route('/api/posts/new/:userId')
   .post(authCtrl.requireSignin, postCtrl.create)
 

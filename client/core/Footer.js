@@ -1,61 +1,49 @@
 import React from "react"
+import { Twitter, Facebook, Instagram, LinkedIn } from '@material-ui/icons';
 import {
     Box,
     Container,
     Row,
     Column,
-    FooterLink,
+    About,
     Heading,
+    Title,
+    FooterLink,
+    SocialList,
+    SocialItem,
 } from "./FooterStyles";
 
 const Footer = () => {
     return (
         <Box>
-            <h1 style={{
-                color: "white",
-                textAlign: "center",
-                marginTop: "-50px"
-            }}>
-                ECO PRODUCT JOURNAL
-      </h1>
+            <Title>ECO PRODUCT JOURNAL</Title>
             <Container>
-                <Row>
-                    <Column>
-                        <Heading>About Us</Heading>
-                        <FooterLink href="#">Who we are</FooterLink>
-                        <FooterLink href="#">Vision</FooterLink>
+                <About>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </About>
 
-                    </Column>
-                    <Column>
-                        <Heading>Supporters</Heading>
-                        <FooterLink href="#">ECO Canada </FooterLink>
-                        <FooterLink href="#">Green Calgary Association</FooterLink>
-                    </Column>
-                    <Column>
-                        <Heading>Contact Us</Heading>
-                        <FooterLink href="#">Calgary</FooterLink>
-                        <FooterLink href="#">Edmonton</FooterLink>
-                      
-                    </Column>
-                    <Column>
-                        <Heading>Social Media</Heading>
-                        <FooterLink href="#">
-                            <i className="fab fa-facebook-f">
-                                <span style={{ marginLeft: "10px" }}>
-                                    Facebook
-                  </span>
-                            </i>
+                <SocialList>
+                    <SocialItem>
+                        <FooterLink href='#'>
+                            <Twitter />
                         </FooterLink>
-                        <FooterLink href="#">
-                            <i className="fab fa-instagram">
-                                <span style={{ marginLeft: "10px" }}>
-                                    Instagram
-              
-                  </span>
-                            </i>
+                    </SocialItem>
+                    <SocialItem>
+                        <FooterLink href='#'>
+                            <Facebook />
                         </FooterLink>
-                    </Column>
-                </Row>
+                    </SocialItem>
+                    <SocialItem>
+                        <FooterLink href='#'>
+                            <Instagram />
+                        </FooterLink>
+                    </SocialItem>
+                    <SocialItem>
+                        <FooterLink href='#'>
+                            <LinkedIn />
+                        </FooterLink>
+                    </SocialItem>
+                </SocialList>
             </Container>
         </Box>
     );

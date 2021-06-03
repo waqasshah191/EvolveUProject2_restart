@@ -1,17 +1,24 @@
 import styled from 'styled-components';
 
 export const Box = styled.div`
-padding: 80px 60px;
+
+padding: 120px 40px;
 background: #009688;
 width: 100%;
-
+box-sizing: border-box;
 
 @media (max-width: 1000px) {
 	padding: 70px 30px;
 }
 `;
-
+export const Title = styled.h1`
+font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+	color: white;
+	text-align: center;
+	margin-top: -50px;
+`;
 export const Container = styled.div`
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -39,15 +46,22 @@ grid-gap: 20px;
 }
 `;
 
-export const FooterLink = styled.a`
+export const About = styled.p`
 color: #fff;
 margin-bottom: 20px;
 font-size: 18px;
 text-decoration: none;
 
+`;
+
+export const FooterLink = styled.a`
+color: #fff;
+margin-bottom: 20px;
+font-size: 25px;
+text-decoration: none;
+padding: 7px;
 &:hover {
 	color: green;
-	transition: 200ms ease-in;
 }
 `;
 
@@ -57,3 +71,12 @@ color: #fff;
 margin-bottom: 40px;
 font-weight: bold;
 `;
+
+export const SocialList = styled.ul`
+	padding: 0;
+	margin: auto;
+`;
+
+export const SocialItem = styled.li`
+	display: inline-block;
+`

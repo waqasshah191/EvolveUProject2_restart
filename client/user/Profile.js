@@ -18,14 +18,22 @@ import {Redirect, Link} from 'react-router-dom'
 import FollowProfileButton from './../user/FollowProfileButton'
 import ProfileTabs from './../user/ProfileTabs'
 import {listByUser} from './../post/api-post.js'
+import ProfilebackgroundImg from './../assets/images/world-back.jpg'
 
 const useStyles = makeStyles(theme => ({
-  root: theme.mixins.gutters({
+  root:{
+    backgroundImage: `url(${ProfilebackgroundImg})`,
+    backgroundSize:'cover',
+    backgroundAttachment: 'fixed',
+    paddingTop: 10
+  },
+  style: theme.mixins.gutters({
     maxWidth: 600,
     margin: 'auto',
     padding: theme.spacing(3),
-    marginTop: theme.spacing(5)
+    marginTop: theme.spacing(5),
   }),
+
   title: {
     margin: `${theme.spacing(2)}px ${theme.spacing(1)}px 0`,
     color: theme.palette.protectedTitle,
@@ -114,8 +122,8 @@ export default function Profile({ match }) {
     if (values.redirectToSignin) {
       return <Redirect to='/signin'/>
     }
-    return (
-      <Paper className={classes.root} elevation={4}>
+    return (<div className={classes.root}>
+      <Paper className={classes.style} elevation={4}>
         <Typography variant="h6" className={classes.title}>
           Profile
         </Typography>
@@ -145,6 +153,8 @@ export default function Profile({ match }) {
         </List>
         <ProfileTabs user={values.user} posts={posts} removePostUpdate={removePost}/>
       </Paper>
+    </div>
+    
     )
 }
 

@@ -36,6 +36,10 @@ const Menu = withRouter(({ history }) => (
             <Button style={isActive(history, "/signin")}>Sign In
             </Button>
           </Link>
+          <Link to="/Table">
+            <Button style={isActive(history, "/Table")}>Category Table
+            </Button>
+          </Link>
         </span>)
       }
       {
