@@ -6,15 +6,16 @@ import IconButton from '@material-ui/core/IconButton'
 import HomeIcon from '@material-ui/icons/Home'
 import Button from '@material-ui/core/Button'
 import auth from './../auth/auth-helper'
-import {Link, withRouter} from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 const isActive = (history, path) => {
   if (history.location.pathname == path)
-    return {color: '#ffa726'}
+    return { color: '#ffa726' }
   else
-    return {color: '#ffffff'}
+    return { color: '#ffffff' }
 }
-const Menu = withRouter(({history}) => (
+
+const Menu = withRouter(({ history }) => (
   <AppBar position="static">
     <Toolbar>
       <Typography variant="h6" color="inherit">
@@ -22,7 +23,7 @@ const Menu = withRouter(({history}) => (
       </Typography>
       <Link to="/">
         <IconButton aria-label="Home" style={isActive(history, "/")}>
-          <HomeIcon/>
+          <HomeIcon />
         </IconButton>
       </Link>
       {
@@ -47,12 +48,17 @@ const Menu = withRouter(({history}) => (
             <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
           </Link>
           <Button color="inherit" onClick={() => {
+
+            auth.clearJWT(() => history.push('/'))
+          }}>Sign out</Button>
               auth.clearJWT(() => history.push('/'))
             }}>Sign out</Button>
+
           <Link to="/Table">
             <Button style={isActive(history, "/Table")}>All Posts
             </Button>
           </Link>
+
         </span>)
       }
     </Toolbar>
